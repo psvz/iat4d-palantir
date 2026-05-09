@@ -4,9 +4,9 @@
 
 These are static datasets for backing Ontology types.
 
-Add a pipeline, options: Batch, Faster. Load data from file `Identity Grid.csv`, all columns are _string_ type. Add output Dataset named **iMarks**. Save and deploy.
+Add a pipeline, options: Batch, Faster. Load structured data from file `Identity Grid.csv`, all columns are _string_ type. Add output Dataset named **iMarks**. Save and deploy.
 
-Add a pipeline, options: Batch, Faster. Load data from file `Secure Trail.csv`. Time is _timestamp_ type, verified is _boolean_, others are _strings_. Add output Dataset named **TapEvents**. Save and deploy.
+Add a pipeline, options: Batch, Faster. Load structured data from file `Secure Trail.csv`. Time is _timestamp_ type, verified is _boolean_, others are _strings_. Add output Dataset named **TapEvents**. Save and deploy.
 
 > Data Connection app
 
@@ -21,19 +21,19 @@ Minimal permissions to add: _Enable exports without markings_ and _Allow import 
 > Ontology Manager app
 
 Create new Object types:
-* **iMark**. API: `imark`. Backing datasource **iMarks** (above).
-* **Tap**. API: `tap`. Backing datasource **TapEvents** (above). Also, toggle _Allow Edits_ on.
+* **iMark**. API name: `imark`. Backing datasource **iMarks** (above). Set both Primary key and Title by _iMark Name_ column.
+* **Tap**. API name: `tap`. Backing datasource **TapEvents** (above). Set Primary key by _uuid_ column and Title - by _Tap Guid_. Also, toggle _Allow Edits_ on.
 
 Create new Link Types:
 * One-to-many (foreign key). Many side: **Tap** by _iMark Name_. One side: **iMark** by _iMark Name_. This is a relationship reflecting that each iMark can be tapped many times, and Tap is a record for each such event.
 
-**NB** If you have a commercial (not free dev) account with Palantir, it may be a good idea to configure a dataset-level retention policy for Tap, in order to avoid infinite growth as tap-events come in (production).
+**NB** If you have a commercial (not free dev) account with Palantir, it may be a good idea to configure a dataset-level retention policy for Tap, in order to avoid infinite growth as tap-events keep coming in (production).
 
 > New tab **Home** -> **Files** -> **Main Folder** -> **+ New** -> _Code Repository_
 
 Create a repository (TypeScript v2), name it something like _imark-tap-functions_, and open _VS Code_ (it is an in-browser gimmick). In the VS Code you need to add three resources: Object Types **Tap** and **iMark**, and a Source _Keystore_. After that, click `+ Create` to build Ontology SDK and then `Install`.
 
-Add the file `verifyTapPayload.ts` under `functions` folder into the repo. Commit, Tag, and then wait for checkmark on the Monitored Items box (it can take a minute). On completion, the function appears under Published tab of Functions preview. If you click on it, you can supply an input payload for a dry run:
+Add the file `verifyTapPayload.ts` under `functions` folder into the repo. Commit, Tag, and then wait for the checkmark on the Monitored Items box (it can take a minute). On completion, the function appears under Published tab of Functions preview. If you click on it, you can supply an input payload for a dry run:
 
     {
         "input": {
