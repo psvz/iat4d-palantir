@@ -3,7 +3,6 @@
 [![Watch YouTube Tutorial](https://img.shields.io/badge/Watch_Video-FF0000?style=flat&logo=youtube&logoColor=white)](https://youtu.be/w5ohnUb9GXI)
 
 &nbsp;
-
 > Pipeline Builder app
 
 These are static datasets for backing Ontology types.
