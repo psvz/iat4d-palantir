@@ -1,7 +1,6 @@
 ## IAT4D integration with Palantir
 
-[![Watch YouTube Tutorial](https://img.shields.io/badge/Watch_Video-FF0000?style=flat&logo=youtube&logoColor=white)](https://youtu.be/w5ohnUb9GXI)
-
+[![Watch YouTube Tutorial](https://img.shields.io/badge/Watch_Video-FF0000?style=flat&logo=youtube&logoColor=white)](https://youtu.be/w5ohnUb9GXI)<br>
 
 > Pipeline Builder app
 
