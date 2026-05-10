@@ -44,6 +44,7 @@ Add the file `verifyTapPayload.ts` under `functions` folder into the repo. Commi
             "tapBy": "ghost"
         }
     }
+**NB** The leading four fields are protected through Ed25519 signature. If you change any of those arbitrarily, _Tap Verified_ field of the record being created will become false.
 
 > Ontology Manager app
 
