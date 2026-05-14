@@ -81,3 +81,10 @@ We can emulate an app-side OSDK call with Postman or curl:
         }
     }
 _Run History_ at the bottom of Workflow Lineage app keeps debug diagnostics you can inspect if anything goes south. _Insight_ app provides relational view of arriving events from Ontology standpoint.
+
+## Support
+Integration support and partnership inquiries -
+
+Contact us at [info@iat4d.com](mailto:info@iat4d.com) or visit [https://iat4d.com](https://iat4d.com)
+
+[![Community Blog](palantir-logo.png "Community Blog")](https://community.palantir.com/t/spatiotemporal-resilience-for-ontology-secure-digital-trail-of-regulated-critical-operations/6580)
